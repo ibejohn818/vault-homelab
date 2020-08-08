@@ -1,0 +1,15 @@
+version: '3'
+services:
+  vault:
+    build: ./docker/vault
+    image: vaulthome
+    ports:
+      - 8200:8200
+    volumes:
+      - vaultdisk:/vault
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config=/vault/config/vault.json
+
+volumes:
+  vaultdisk:
