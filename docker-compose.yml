@@ -6,10 +6,12 @@ services:
     ports:
       - 8200:8200
     volumes:
-      - vaultdisk:/vault
+      - vaultfile:/vault/file
+      - vaultlogs:/vault/logs
     cap_add:
       - IPC_LOCK
     entrypoint: vault server -config=/vault/config/vault.json
 
 volumes:
-  vaultdisk:
+  vaultfile:
+  vaultlogs:
