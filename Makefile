@@ -1,0 +1,11 @@
+update:
+	docker pull vault
+
+stop:
+	docker-compose down
+
+build:
+	docker-compose build
+
+start:
+	docker-compose up -d
